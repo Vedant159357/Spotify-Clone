@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="nav-content">
+        <div class="logo-container">
+          <div class="logo">SM</div>
+          <h1 class="app-name">Music Player</h1>
+        </div>
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search songs..."
+          />
+          <button class="search-btn">Search</button>
+        </div>
+        <div class="theme-toggle">
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="song-grid">
+        <!-- Song items will be dynamically loaded here -->
+      </div>
+    </div>
+
+    <div class="player-controls" id="player-controls">
+      <div class="current-song-info">
+        <div class="song-thumbnail-container">
+          <img
+            src="songs/song-thumbnail1.jpg"
+            alt="Current Song"
+            class="current-song-thumbnail"
+          />
+        </div>
+        <div class="song-info-text">
+          <span class="current-song-name">Song Title</span>
+          <span class="current-song-artist">Artist Name</span>
+        </div>
+      </div>
+      <div class="progress-container">
+        <span class="time-display">0:00</span>
+        <input
+          type="range"
+          class="progress-slider"
+          min="0"
+          max="100"
+          value="0"
+        />
+        <span class="time-display">0:00</span>
+      </div>
+      <div class="controls">
+        <span class="prev-btn">⏮</span>
+        <span class="play-btn">▶</span>
+        <span class="next-btn">⏭</span>
+      </div>
+      <div class="controls-extra">
+        <span class="shuffle-btn" title="Shuffle (S)">🔀</span>
+        <span class="repeat-btn" title="Repeat (R)">🔁</span>
+        <span class="mini-player-btn" title="Mini Player (M)">📱</span>
+      </div>
+      <div class="volume-control">
+        <span>🔊</span>
+        <input
+          type="range"
+          class="volume-slider"
+          min="0"
+          max="100"
+          value="100"
+        />
+      </div>
+    </div>
+
+    <div class="equalizer-container">
+      <canvas id="equalizer"></canvas>
+    </div>
+    <div class="keyboard-shortcuts-info">
+      <div class="shortcuts-tooltip">
+        <h3>Keyboard Shortcuts</h3>
+        <ul>
+          <li>Space - Play/Pause</li>
+          <li>→ - Next Song</li>
+          <li>← - Previous Song</li>
+          <li>M - Toggle Mini Player</li>
+          <li>N - Mute/Unmute</li>
+          <li>S - Shuffle</li>
+          <li>R - Repeat</li>
+        </ul>
+      </div>
+    </div>
+    <audio id="audioElement" src="songs/song1.mp3"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
